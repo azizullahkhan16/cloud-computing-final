@@ -1,0 +1,380 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+@font-face {
+  font-family: "FuturaBold";
+  src: url("/assets/fonts/Futura Bold font.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  -webkit-text-size-adjust: 100%;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+@media (min-width: 1170px) {
+  .hero-image {
+    max-height: 539px;
+    min-height: 539px;
+  }
+}
+
+.crimson-text-bold {
+  font-family: "Crimson Text", serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.btn-small {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 15px;
+  padding: 0.5rem 1rem;
+}
+
+.btn-primary {
+  --tw-bg-opacity: 1;
+  border-radius: 0.5rem;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 32px;
+  padding: 0.75rem 3rem;
+  background-color: rgba(0, 235, 121, var(--tw-bg-opacity));
+}
+
+.customShadow:hover {
+  --tw-shadow: 0 0px 20px 0px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color),
+    0 8px 10px -6px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+    var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+.customShadow1 {
+  --tw-shadow: 0 0px 20px 0px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color),
+    0 8px 10px -6px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+    var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+.content-wrapper {
+  overflow: hidden;
+  transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+.collapsed {
+  max-height: 0;
+  opacity: 0;
+  animation: rollUp 0.5s forwards;
+}
+
+.expanded {
+  max-height: 500px; /* Set to a large enough value to accommodate content */
+  opacity: 1;
+  animation: rollDown 0.5s forwards;
+}
+
+@keyframes rollDown {
+  from {
+    max-height: 0;
+    opacity: 0;
+  }
+
+  to {
+    max-height: 500px;
+    opacity: 1;
+  }
+}
+
+@keyframes rollUp {
+  from {
+    max-height: 500px;
+    opacity: 1;
+  }
+
+  to {
+    max-height: 0;
+    opacity: 0;
+  }
+}
+
+.button {
+  transition: transform 0.3s;
+}
+
+.button:hover {
+  transform: translateY(-3.5px);
+}
+
+.btn-secondary {
+  --tw-bg-opacity: 1;
+  border-radius: 0.5rem;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 21px;
+  padding: 0.625rem 0.875rem;
+}
+
+.btn-small {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 15px;
+  padding: 0.5rem 1rem;
+}
+
+@media (min-width: 768px) {
+  .header .header-link:before {
+    background-color: #2dc6b0;
+    bottom: -4px;
+    content: "";
+    height: 2px;
+    left: auto;
+    position: absolute;
+    right: 0;
+    transition: all 0.4s ease-in-out;
+    width: 0;
+  }
+
+  .header .header-link:hover:before {
+    left: 0;
+    right: auto;
+    width: 100%;
+  }
+  .header .header-link {
+    transition: all 0.4s ease-in-out;
+  }
+}
+.footer .footer-link:before {
+  background-color: #2dc6b0;
+  bottom: -4px;
+  content: "";
+  height: 2px;
+  left: auto;
+  position: absolute;
+  right: 0;
+  transition: all 0.4s ease-in-out;
+  width: 0;
+}
+
+.footer .footer-link:hover:before {
+  left: 0;
+  right: auto;
+  width: 100%;
+}
+
+.footer .footer-link {
+  transition: all 0.4s ease-in-out;
+}
+
+/* styles for submit button of the form */
+.ant-btn-default:not(:disabled):not(.ant-btn-disabled):active,
+.ant-btn-default:not(:disabled):not(.ant-btn-disabled):hover {
+  color: #2dc6b0 !important;
+  border-color: #2dc6b0 !important;
+}
+
+.ant-btn:not(:disabled):focus-visible {
+  outline: 4px solid #2dc6b0 !important;
+}
+
+/* styles for input field of the form */
+.ant-input-outlined:focus,
+.ant-input-outlined:focus-within {
+  border-color: #2dc6b0 !important;
+}
+
+.ant-input-outlined:hover {
+  border-color: #2dc6b0 !important;
+}
+
+/* styles for input field of the form */
+.ant-modal {
+  width: 400px !important;
+}
+
+.ant-modal .ant-modal-close {
+  border-radius: 100% !important;
+}
+
+.gradient-background {
+  background: radial-gradient(
+    circle farthest-side at top right,
+    #ff9393 0%,
+    #fe6c59 60%
+  );
+}
+
+.customBackground {
+  background: radial-gradient(
+    circle at 0.9% 49.5%,
+    rgb(0, 250, 255) 0%,
+    rgb(2, 255, 187) 100.2%
+  );
+  background-size: cover;
+  border-top-left-radius: 150px;
+  border-top-right-radius: 50px;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 150px;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: calc(100vw - 5px);
+  position: relative;
+  left: 50.5%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.customCaraousel .alice-carousel__dots {
+  padding: 0;
+  list-style: none;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  right: 30px;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Adjust the spacing between dots as needed */
+}
+
+.customCaraousel .alice-carousel__dots > li {
+  border: 2px solid white; /* Adjust border properties as needed */
+  border-radius: 50%; /* Ensures the border creates a circle */
+  width: 24px; /* Adjust dot size */
+  height: 24px; /* Adjust dot size */
+  padding: 2px;
+  background-color: transparent !important;
+}
+
+.customCaraousel .alice-carousel__dots-item {
+  position: relative;
+}
+
+.customCaraousel .alice-carousel__dots-item::before {
+  content: "";
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background-color: #fff;
+  border-radius: 50%;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+.alice-carousel__dots-item:not(.__custom).__active::before {
+  background-color: #2dc6b0;
+}
+
+.customCaraousel2 .alice-carousel__dots-item:not(.__custom).__active {
+  background-color: #2dc6b0 !important;
+}
+
+.alice-carousel__dots-item:hover::before {
+  background-color: #2dc6b0;
+}
+
+.customCaraousel .alice-carousel__dots-item:not(.__custom).__active {
+  /* background-color: #2DC6B0 !important; */
+}
+
+/* Slide in from top */
+@keyframes slideInFromTop {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Slide out to top */
+@keyframes slideOutToTop {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+}
+
+/* Apply the animations to the modal */
+.custom-slide-enter {
+  animation: slideInFromTop 0.7s ease-out forwards;
+}
+
+.custom-slide-leave {
+  animation: slideOutToTop 0.7s ease-out forwards;
+}
+
+@media only screen and (max-width: 1700px) {
+  .customCaraousel .customCaraousel .alice-carousel__dots {
+    right: 10px;
+    gap: 10px; /* Adjust the spacing between dots as needed */
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .customCaraousel .alice-carousel__dots {
+    right: 0;
+    gap: 10px;
+  }
+
+  .customCaraousel .alice-carousel__dots-item::before {
+    width: 12px;
+    height: 12px;
+  }
+  .customCaraousel .alice-carousel__dots > li {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .customBackground {
+    border-top-left-radius: 100px;
+    border-top-right-radius: 25px;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 100px;
+  }
+  .customHeading {
+    line-height: 48px !important;
+  }
+  .imageBackground {
+    background-position: 60% !important;
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  .customHeading {
+    line-height: 26px !important;
+  }
+  .customCaraousel .alice-carousel__dots {
+    right: 0;
+    gap: 10px;
+  }
+
+  .customCaraousel .alice-carousel__dots-item::before {
+    width: 8px;
+    height: 8px;
+  }
+  .customCaraousel .alice-carousel__dots > li {
+    width: 16px;
+    height: 16px;
+  }
+}
